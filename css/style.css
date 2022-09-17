@@ -1,0 +1,513 @@
+/* Global Rules */
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:root {
+    --main-color: #262424;
+    --secound-color: #262424;
+    --white-color:#fff;
+    --hov-color: #b1a7a6;
+    --main-transition: 0.3s;
+    --section-margin: 70px 0;
+}
+/* --hov-color: #7c1e21; */
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--main-color);
+    text-transform: capitalize;
+}
+html {
+    scroll-behavior: smooth;
+}
+ul {
+    margin: 0;
+    padding: 0; 
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: var(--white-color);
+
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Meduim */
+@media (min-width: 992px) {
+    .container{
+        width: 970px;
+    }
+}
+/* large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* Start header */
+header {
+    background-color: var(--secound-color);
+    position: relative;
+    box-shadow: 0 0 10px var(--white-color);
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .alt-nav > button {
+    font-weight: bold;
+}
+@media (min-width: 768px) {
+    header .alt-nav {
+        display: none;
+    }
+}
+header .dropdown-menu {
+    background-color: var(--secound-color);
+}
+header .dropdown-menu .dropdown-item {
+    color: var(--white-color);
+    font-size: 1.3rem;
+}
+header .dropdown-menu .dropdown-item:hover {
+    background-color: var(--hov-color);
+    color: var(--white-color);
+}
+header .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 80px;
+}
+header .logo img {
+    max-width: 100%;
+    height: 70px;
+    border-radius: 50%;
+    transition: var(--main-transition);
+}
+header .logo:hover img {
+    border: 4px solid var(--hov-color);
+}
+header .nav {
+    display: flex;
+}
+@media (max-width: 767px) {
+    header .nav {
+        display: none;
+    }
+}
+header .nav li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 20px;
+    transition: var(--main-transition);
+    font-size: 1.2rem;
+    height: 80px;
+    overflow: hidden;
+}
+header .nav li a:hover {
+    color: var(--hov-color);
+    background-color: var(--main-color);
+}
+header .nav li a::before {
+    top: 0;
+    left: -100%;
+}
+header .nav li a::after {
+    bottom: 0;
+    right: -100%;
+}
+header .nav li a::after,
+header .nav li a::before {
+    content: "";
+    position: absolute;
+    background-color: var(--hov-color);
+    width: 100%;
+    height: 5px;
+    transition: var(--main-transition);
+}
+header .nav li a:hover::before {
+    left:0;
+}
+header .nav li a:hover::after {
+    right: 0;
+}
+header .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--hov-color);
+}
+header .icons svg {
+    color: var(--white-color);
+}
+header .icons svg:hover {
+    color: var(--hov-color);
+}
+/* End Header */
+/* Slider */
+
+.slider h5 {
+    color: var(--white-color);
+    font-size: 2rem;
+    font-weight: bold;
+}
+.slider p {
+    color: var(--white-color);
+    font-size: 1.3rem;
+}
+/* Start hero  */
+.features  {
+    background-color: var(--secound-color);
+}
+.features h1 {
+    text-align: start;
+    padding: 50px;
+    color: var(--white-color);
+}
+.features .container .box{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(280px , 1fr));
+    gap: 40px;
+    background-color: rgb(14, 12, 12);
+    padding: 50px;
+    position: relative;
+}
+.features .image {
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    position: relative;
+    margin: auto;
+}
+.features .image img {
+    max-width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+.features .box .btn {
+    font-size: 1,2rem;
+    color: var(--white-color);
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+@media (max-width: 767px) {
+    .features h1 {
+        font-size: .8rem;
+    }
+    .features .image:nth-child(4),
+    .features .image:nth-child(5),
+    .features .image:last-child{
+        display: none;
+    }
+}
+/* End Hero */
+/* Start products Section */
+.products {
+    background-color: var(--secound-color);
+    margin: var(--section-margin);
+}
+.products-top {
+    border-top: 2px solid var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+
+}
+.products-top  p, h4 {
+    color: rgb(158, 241, 158);
+    font: 1.2rem;
+    font-weight: bold;
+    flex: 1;
+}
+.products .pro-imgs {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.products .pro-imgs .image {
+    width: 200px;
+}
+.products .pro-imgs .image img {
+    max-width: 100%;
+    border-radius: 20px;
+    transition: var(--main-transition);
+}
+.products .pro-imgs .image:hover img{
+    border: 1px solid var(--white-color);
+}
+.products .products-content .content-img {
+    position: relative;
+    width: 100%;
+}
+.products-content .content-img img {
+    max-width: 100%;
+}
+.products-content .content-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 70px;
+    background-color: rgb(172, 180, 187);
+    padding: 0 30px;
+}
+.products-content .content-bottom p {
+    color: var(--main-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.products-content .content-bottom button {
+    font-size: 1.3rem;
+    width: 200px;
+    font-weight:600;
+    color: var(--white-color);
+    background-color: var(--secound-color);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    transition: var(--main-transition);
+}
+.products-content .content-bottom button:hover {
+    color:var(--hov-color) ;
+    background-color: #575555;
+}
+@media (max-width: 767px) {
+    .products .pro-imgs .image {
+        width: 100px;
+    }
+    .products .pro-imgs .image:nth-child(3),
+    .products .pro-imgs .image:last-child {
+        display: none;
+    }
+    .products-top p,h4 {
+        font-size: .7rem;
+    }
+    .products-content .content-bottom {
+        padding: 0 10px;
+    }
+    .products-content .content-bottom p,
+    .products-content .content-bottom button {
+        font-size: .8rem;
+    }
+    .products-content .content-bottom button {
+        width: 100px;
+    }
+}
+/* End products Section */
+/* Jakets Section */
+.products .main-jaket {
+    width: 100%;
+    border-top: 2px solid var(--white-color);
+}
+.products .main-jaket img {
+    padding-top: 30px;
+    max-width: 100%;
+}
+.products .bottom-jakets {
+    color: aliceblue;
+    gap: 20px;
+    margin: var(--section-margin);
+}
+.products .bottom-jakets .jaket-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+.products .bottom-jakets .jaket-content .jak-img {
+    width: 100%;
+}
+.products .bottom-jakets .jaket-content .jak-img img {
+    max-width: 100%;
+}
+.products .bottom-jakets .jaket-content .jak-img span{
+    color: var(--white-color);
+    display: inline-block;
+    padding-top: 10px;
+}
+/* Emd of Jakets Section */
+/* Start Helmets Section */
+.helmets .helmet-image {
+    width: 100%;
+    position: relative;
+    background-color: white;
+}
+.helmets .helmet-image img {
+    max-width: 100%;
+}
+.helmets .helmet-content {
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    height: 100%;
+    transform: translateY(-50%);
+    background-color: rgb(236 232 232 / 24%);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.helmets .helmet-content p {
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+.helmets .helmet-content .hel-btn {
+    background-color: black;
+    color: var(--white-color);
+    width: 200px;
+    font-size: 1.4rem;
+}
+.helmets .helmet-pics {
+    gap: 50px;
+    margin: var(--section-margin);
+}
+.helmets .helmet-pics .card {
+    background-color: #262424;
+    border: none;
+    text-align: center;
+}
+.helmets .helmet-pics .card .image img {
+    width: 100%;
+
+}
+.helmets .helmet-pics .card p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--white-color);
+    padding-top: 20px;
+}
+/* End Of Helmets Section */
+/* Start Bottom Section */
+.bottom-2 {
+    margin: var(--section-margin);
+}
+.bottom-2 .btom-card  {
+    border-top: 2px solid var(--white-color);
+    position: relative;
+}
+.bottom-2  img {
+    max-width: 100% ;
+    padding-top: 20px;
+}
+.bottom-2 .btom-content {
+    color: var(--white-color);
+    position: absolute;
+    top: 51.5%;
+    left: 25%;
+    transform: translate(-50%,-50% );
+    height: calc(100% - 23px);
+    background-color: #000000d4;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+}
+.bottom-2 .btom-content .btn {
+    width: 250px;
+    height: 50px;
+    font-size: 1.3rem;
+}
+.bottom-2 .btom-content .btn:hover {
+    color: #262424;
+    font-weight: bold;
+}
+@media (max-width: 767px) {
+    .bottom-2 .btom-content {
+        display: none;
+    }
+}
+/* Start Footer */
+.footer {
+    margin-top: var(--section-margin);
+    border-top: 2px solid var(--white-color);
+    padding-top: 40px; ;
+}
+.fotter-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+
+}
+.fotter-1 .input {
+    position: relative;
+}
+.fotter-1 .input input {
+    width: 250px;
+    height: 40px;
+}
+.fotter-1 .mail {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    height: 100%;
+    color: var(--secound-color);
+}
+.fotter-2 h5 {
+    font-size: 1.5rem;
+}
+.fotter-2 ul li a {
+    padding: 10px 0;
+    font-size: 1.2rem;
+    color: inherit;
+    display: block;
+    transition: var(--main-transition);
+}
+.fotter-2 ul li a:hover {
+    color: var(--white-color);
+}
+@media (max-width:767px) {
+    .fotter-1 {
+        width: 50%;
+        text-align: left;
+        font-size: .7rem;
+
+    }
+    .fotter-2 {
+        width: 50%;
+        text-align: right;
+        font-size: .7rem;
+    }
+    .fotter-1 .input input {
+        width: 200px;
+    }
+    .footer .last {
+        display: none;
+    }
+}
+/* End Footer */
+
+
+
